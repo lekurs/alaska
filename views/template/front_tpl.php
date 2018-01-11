@@ -30,6 +30,16 @@ foreach($session->getFlashBag()->get('violations_comment', array()) as $message)
     echo '<div class="flash-notice_error">'.$message. '</div>';
 }
 
+foreach($session->getFlashBag()->get('newUser_succes', array()) as $message)
+{
+    echo '<div class="flash-notice_success">'.$message.'</div>';
+}
+
+foreach ($session->getFlashBag()->get('newUser_badField', array()) as $message)
+{
+    echo '<div class="flash-notice_error">'.$message.'</div>';
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -95,14 +105,14 @@ foreach($session->getFlashBag()->get('violations_comment', array()) as $message)
     <!-- Metatags FB -->
     <meta property="og:title" content="Blog Jean FORTEROCHE" />
     <meta property="og:type" content="Blog Jean FORTEROCHE" />
-    <meta property="og:url" content="alaska/mclwebservices.com" />
+    <meta property="og:url" content="alaska.mclwebservices.com" />
     <meta property="og:description" content="Bienvenue sur le blog de Jean FORTEROCHE - Billet simple pour l'Alaska" />
     <meta property="og:image" content="/images/header_image_2.jpg" />
 
     <!-- Metatag Twitter -->
     <meta name="twitter:card" content="Blog Jean FORTEROCHE" />
     <meta name="twitter:tittle" content="Blog Jean FORTEROCHE" />
-    <meta name="twitter:description" content="Billet simple pour l'Alaska - Jean FORTEROCHE" />
+    <meta name="twitter:description" content="Bienvenue sur le blog de Jean FORTEROCHE - Billet simple pour l'Alaska" />
     <title><?= $title; ?></title>
 </head>
 <body>

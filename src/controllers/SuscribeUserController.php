@@ -70,7 +70,6 @@ class SuscribeUserController extends Controllers
             }
             else {
                 $session->getFlashBag()->add('newUser_error', '<strong>Error : </strong>Email déjà utilisé, merci d\'en sélectionner un nouveau');
-
             }
         }
         else {
