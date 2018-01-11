@@ -34,7 +34,7 @@ $request = \Symfony\Component\HttpFoundation\Request::createFromGlobals();
             <div class="liste-commentaires">
                 <p class="numero-comment"><?php echo $i++; ?></p>
                 <p class="log-comment"><?=  ucfirst($comment->username()); ?></p>
-                <p class="detail-comment"><?= htmlentities($comment->comments()); ?></p>
+                <p class="detail-comment"><?= utf8_decode($comment->comments()); ?></p>
                 <p class="warning">
                     <input type="hidden" name="report" class="report" value="<?= $comment->report(); ?>" />
                     <input type="hidden" name="chapterId" class="chapterId" value="<?= $comment->chapterId(); ?>" />

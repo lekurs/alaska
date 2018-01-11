@@ -33,7 +33,7 @@ class PostCommentController extends Controllers
 
         $build = [
                 'idComments' => null,
-                'comments' => $request->get('post_commentaire'),
+                'comments' => nl2br(utf8_encode($request->get('post_commentaire'))),
                 'report' => 0,
                 'chapterId' => $idChapter,
                 'userId' => $session->get('id'),
