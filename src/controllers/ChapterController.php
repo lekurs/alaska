@@ -27,6 +27,6 @@ class ChapterController extends Controllers
 
             $title = "Bienvenue en Alaska - Chapitre N° " .$idChapter;
 
-            $this->view('/showChapterView', compact('showChapter', 'comments', 'nbComment', 'title', 'commentManager', 'form', 'formSuscribe', 'formComment', 'idChapter'));
+            $this->view('/showChapterView', compact('showChapter', 'comments', 'nbComment', 'title', 'commentManager', 'idChapter'));
         }
 }

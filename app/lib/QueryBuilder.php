@@ -328,7 +328,7 @@ class QueryBuilder extends Database
                 {
                     foreach ($this->andFrom as $result)
                     {
-                        $req .= ' AND FROM ' .$result;
+                        $req .= ' , ' .$result;
                     }
                 }
 
