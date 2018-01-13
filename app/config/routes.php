@@ -78,6 +78,11 @@ return [
        'controller' => src\controllers\AdminUpdateReportComment::class,
         'method' => 'GET'
     ],
+    'adminUpdatingReportComment' => [
+        'path' => '/admin/update/message/:id',
+        'controller' => src\controllers\AdminUpdatingReportComment::class,
+        'method' => 'POST',
+    ],
     'adminUsers' => [
        'path' => '/admin/users',
        'controller' => src\controllers\AdminUsersController::class,

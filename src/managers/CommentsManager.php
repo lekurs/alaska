@@ -215,6 +215,26 @@ class CommentsManager extends Database
         return $this->dataCommReport;
     }
 
+    public function updateComment(Comments $comments)
+    {
+        $db = new QueryBuilder($this->Connect());
+
+        $req = $db->type('update')
+                            ->from('comments')
+                            ->andFrom('user as u')
+                            ->values('id_comments = :idComments , comments = :comments, report = :report, user_id = :userId, chapter_id = :chapterId,  u.username = :username')
+                            ->where('id_comments = :idComments');
+
+        $req->bind(':idComments', $comments->idComments());
+        $req->bind(':comments', $comments->comments());
+        $req->bind(':report', $comments->report());
+        $req->bind(':userId', $comments->userId());
+        $req->bind(':username', $comments->username());
+        $req->bind(':chapterId', $comments->chapterId());
+
+        $req->exec();
+    }
+
     public function buildComments(array $data)
     {
         $model = new Comments();

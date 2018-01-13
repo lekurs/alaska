@@ -5,6 +5,15 @@
  * Date: 12/11/2017
  * Time: 14:05
  */
+$session = new \Symfony\Component\HttpFoundation\Session\Session();
+
+foreach ($session->getFlashBag()->get('updateMessageSuccess', array()) as $message) {
+    echo '<div class="flash-notice_success">'.$message.'</div>';
+}
+
+foreach ($session->getFlashBag()->get('updateMessageError', array()) as $message) {
+    echo '<div class="flash-notice_success">'.$message.'</div>';
+}
 
 ?>
 <section>

@@ -371,6 +371,11 @@ class QueryBuilder extends Database
         elseif ($type == 'update')
         {
             $req .= implode(' ', $this->from);
+            if(!empty($this->andFrom)) {
+                foreach ($this->andFrom as $result) {
+                    $req .= ' , ' . $result;
+                }
+            }
             $req .= ' SET '.implode(' ', $this->set);
             $req.= ' '.implode(' ', $this->values).'';
             $req .= ' WHERE ' .implode(' ', $this->where);
