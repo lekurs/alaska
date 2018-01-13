@@ -56,7 +56,7 @@ foreach ($session->getFlashBag()->get('updateMessageError', array()) as $message
                             <tbody>
                             <tr class="inter-chapter-table">
                                 <td class="admin-number-comment-table"><?= $reports->chapterId(); ?></td>
-                                <td class="admin-comment"><?= $reports->comments() ;?></td>
+                                <td class="admin-comment"><?= utf8_decode($reports->comments()) ;?></td>
                                 <td class="admin-comment-update"><a href="report/<?= $reports->idComments(); ?>"><i class="fa fa-pencil popin-comment"></i></a></td>
                                 <td class="admin-comment-delete"><a href="delreport/<?= $reports->idComments();?>"><i class="fa fa-trash"></i></a></td>
                             </tr>

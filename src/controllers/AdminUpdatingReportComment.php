@@ -28,7 +28,7 @@ class AdminUpdatingReportComment extends Controllers
 
         $build = [
             'idComments' => $idComments,
-            'comments' => $request->get('comments_area'),
+            'comments' => utf8_encode($request->get('comments_area')),
             'report' => 0,
             'chapterId' => $request->get('chapterId'),
             'userId' => $request->get('userId'),
