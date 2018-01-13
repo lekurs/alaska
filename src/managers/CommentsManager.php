@@ -221,15 +221,14 @@ class CommentsManager extends Database
 
         $req = $db->type('update')
                             ->from('comments')
-                            ->andFrom('user as u')
-                            ->values('id_comments = :idComments , comments = :comments, report = :report, user_id = :userId, chapter_id = :chapterId,  u.username = :username')
+//                            ->andFrom('user as u')
+                            ->values('id_comments = :idComments , comments = :comments, report = :report, user_id = :userId, chapter_id = :chapterId')
                             ->where('id_comments = :idComments');
 
         $req->bind(':idComments', $comments->idComments());
         $req->bind(':comments', $comments->comments());
         $req->bind(':report', $comments->report());
         $req->bind(':userId', $comments->userId());
-        $req->bind(':username', $comments->username());
         $req->bind(':chapterId', $comments->chapterId());
 
         $req->exec();
